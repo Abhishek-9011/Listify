@@ -50,3 +50,30 @@ body {
     margin-top: 50px;
     text-align: center;
 }
+
+.operation{
+    display: flex;
+    justify-content: right;
+    margin-top: 15px;
+    margin-right: 70px;
+}
+
+.input{
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;    
+}
+
+.input-box{
+    text-align: center;
+    width: 400px;
+    height: 30px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.add{
+    width: 60px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
