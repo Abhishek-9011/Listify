@@ -1,5 +1,15 @@
 const tasks = [];
 
+function updateTaskCounts() {
+    const totalTasks = tasks.length;
+    const completedTasks = tasks.filter(task => task.completed).length;
+    const pendingTasks = totalTasks - completedTasks;
+  
+    document.getElementById("total-tasks").textContent = `Total Tasks: ${totalTasks}`;
+    document.getElementById("completed-tasks").textContent = `Completed Tasks: ${completedTasks}`;
+    document.getElementById("pending-tasks").textContent = `Pending Tasks: ${pendingTasks}`;
+  }
+
 (function addElement() {
   const addButton = document.getElementById("add");
   addButton.addEventListener("click", function () {
@@ -41,5 +51,7 @@ const tasks = [];
   document.getElementById("deleteAll").addEventListener("click", function () {
     const list = document.getElementById("list");
     list.innerHTML = "";
+    tasks.length = 0;
+    updateTaskCounts();
   });
 })();
