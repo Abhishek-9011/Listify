@@ -55,3 +55,18 @@ function updateTaskCounts() {
     updateTaskCounts();
   });
 })();
+
+(function completeAll() {
+    document.getElementById('completeAll').addEventListener('click', function () {
+        for (let i = 0; i < tasks.length; i++) {
+            tasks[i].completed = true;
+        }
+        updateTaskCounts();
+        const listItems = document.getElementById("list").childNodes;
+        listItems.forEach(item => {
+            if (item.nodeName === "LI") { 
+                item.classList.add("completed");
+            }
+        });
+    })
+})()
