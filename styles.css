@@ -4,28 +4,45 @@
     box-sizing: border-box;
 }
 
+:root{
+    --primary-color: #edf2fc;
+    --secondary-color: #212121;
+}
+
+.dark-theme{
+    --primary-color: #000106;
+    --secondary-color: #fff;
+}
+
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
-    background-color: black;
-    color: #333;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
 }
 
 .nav{
-    background-color: red;
+    display: flex;  
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
     height: 50px;
-    text-align: center;
+    justify-content: space-between;
 }
+/* toggle button */
+
+
+
 .hero{
-    color: white;
+    color: var(--secondary-color);
     display: flex;
     justify-content: space-evenly;
     margin-top: 30px;
 }
+
 .main{
     height: 500px;
     width: 600px;
-    background-color: rgb(76, 76, 0);
+    background-color:var(--primary-color);
     border-radius: 15px;
 }
 .title{
@@ -36,13 +53,15 @@ body {
 .tasks{
     height: 400px;
     width: 200px;
-    background-color: green;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
     border-radius: 15px;
 }
 .taskTitle{
     height: 30px;
     text-align: center;
-    background-color: aqua;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
     border-top-right-radius: 15px;
     border-top-left-radius: 15px;
 }

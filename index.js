@@ -1,14 +1,20 @@
 const tasks = [];
 
 function updateTaskCounts() {
-    const totalTasks = tasks.length;
-    const completedTasks = tasks.filter(task => task.completed).length;
-    const pendingTasks = totalTasks - completedTasks;
-  
-    document.getElementById("total-tasks").textContent = `Total Tasks: ${totalTasks}`;
-    document.getElementById("completed-tasks").textContent = `Completed Tasks: ${completedTasks}`;
-    document.getElementById("pending-tasks").textContent = `Pending Tasks: ${pendingTasks}`;
-  }
+  const totalTasks = tasks.length;
+  const completedTasks = tasks.filter((task) => task.completed).length;
+  const pendingTasks = totalTasks - completedTasks;
+
+  document.getElementById(
+    "total-tasks"
+  ).textContent = `Total Tasks: ${totalTasks}`;
+  document.getElementById(
+    "completed-tasks"
+  ).textContent = `Completed Tasks: ${completedTasks}`;
+  document.getElementById(
+    "pending-tasks"
+  ).textContent = `Pending Tasks: ${pendingTasks}`;
+}
 
 (function addElement() {
   const addButton = document.getElementById("add");
@@ -57,16 +63,29 @@ function updateTaskCounts() {
 })();
 
 (function completeAll() {
-    document.getElementById('completeAll').addEventListener('click', function () {
-        for (let i = 0; i < tasks.length; i++) {
-            tasks[i].completed = true;
-        }
-        updateTaskCounts();
-        const listItems = document.getElementById("list").childNodes;
-        listItems.forEach(item => {
-            if (item.nodeName === "LI") { 
-                item.classList.add("completed");
-            }
-        });
-    })
-})()
+  document.getElementById("completeAll").addEventListener("click", function () {
+    for (let i = 0; i < tasks.length; i++) {
+      tasks[i].completed = true;
+    }
+    updateTaskCounts();
+    const listItems = document.getElementById("list").childNodes;
+    listItems.forEach((item) => {
+      if (item.nodeName === "LI") {
+        item.classList.add("completed");
+      }
+    });
+  });
+})();
+
+function darkTheme() {
+  document.getElementById("moon").addEventListener("click", function () {
+    document.body.classList.toggle("dark-theme");
+  });
+  if (document.body.classList.contains("dark-theme")) {
+    document.getElementById("moon").src = "sun.png";
+  } else {
+    document.getElementById("moon").src = "moon.png";
+  }
+}
+
+darkTheme();
