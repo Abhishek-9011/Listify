@@ -80,5 +80,16 @@ body {
 
 #list{
     margin-top: 15px;
-    text-align: center;
+    margin-left: 75px;
+    text-align: left;
 }
+
+.completed {
+    text-decoration: line-through;
+    color: gray;
+  }
+  
+  .done-button {
+    margin-left: 10px;
+  }
+  

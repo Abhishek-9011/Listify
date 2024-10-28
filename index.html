@@ -16,25 +16,37 @@
           <h3>Tasks</h3>
         </div>
         <div class="operation">
-          <button style="margin-right: 30px; width: 70px; height: 25px; border-radius: 5px;">Delete All</button>
-          <button style="border-radius: 5px;">Complete All</button>
+          <button
+            id="deleteAll"
+            style="
+              margin-right: 30px;
+              width: 70px;
+              height: 25px;
+              border-radius: 5px;
+            "
+          >
+            Delete All
+          </button>
+          <button id="completeAll" style="border-radius: 5px">
+            Complete All
+          </button>
         </div>
         <div class="input">
-          <input id="input-box" type="text" placeholder="Enter Your Task"/>
+          <input id="input-box" type="text" placeholder="Enter Your Task" />
           <button id="add">Add</button>
         </div>
         <div id="list">
           <ul></ul>
-         </div>
+        </div>
       </div>
       <div class="tasks">
         <div class="taskTitle">
           <h3>Task Status</h3>
         </div>
-        <div class="task">
-          <p>Total</p>
-          <p>Finished</p>
-          <p>Pending</p>
+        <div id="task-info">
+          <p id="total-tasks">Total Tasks: 0</p>
+          <p id="completed-tasks">Completed Tasks: 0</p>
+          <p id="pending-tasks">Pending Tasks: 0</p>
         </div>
       </div>
     </div>

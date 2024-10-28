@@ -1,20 +1,41 @@
 const tasks = [];
 
 (function addElement() {
-  const addButton = document.getElementById("add");
-  addButton.addEventListener("click", function () {
-    const task = document.getElementById("input-box").value;
-    if (task.trim() === "") {
-      alert("Please enter a task");
-      return;
-    }
+    const addButton = document.getElementById("add");
+    addButton.addEventListener("click", function () {
+      const taskText = document.getElementById("input-box").value;
+      if (taskText.trim() === "") {
+        alert("Please enter a task");
+        return;
+      }
+  
+      const newTask = {
+        text: taskText,
+        completed: false
+      };
+      tasks.push(newTask);
+  
+      const listItem = document.createElement("li");
+      listItem.textContent = taskText;
 
-    const newTask = document.createElement("li");
-    newTask.textContent = task;
-    const list = document.getElementById("list");
-    list.appendChild(newTask);
+      const doneButton = document.createElement("button");
+      doneButton.textContent = "Done";
+      doneButton.className = "done-button";
+      doneButton.addEventListener("click", function () {
+        newTask.completed = true;
+        listItem.classList.add("completed");
+        updateTaskCounts();
+      });
+  
 
-    document.getElementById("input-box").value = "";
-  });
-})();
+      listItem.appendChild(doneButton);
+  
+      const list = document.getElementById("list");
+      list.appendChild(listItem);
+      
+      document.getElementById("input-box").value = "";
+      updateTaskCounts();
+    });
+  })();
+
 
