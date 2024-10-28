@@ -64,7 +64,7 @@ body {
     margin-top: 10px;    
 }
 
-.input-box{
+#input-box{
     text-align: center;
     width: 400px;
     height: 30px;
@@ -72,8 +72,13 @@ body {
     border-bottom-left-radius: 5px;
 }
 
-.add{
+#add{
     width: 60px;
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
+}
+
+#list{
+    margin-top: 15px;
+    text-align: center;
 }
